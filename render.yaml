@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: my-case-file-live
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PRESENTER_KEY
+        sync: false

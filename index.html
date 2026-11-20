@@ -1,0 +1,183 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MY CASE FILE | 움직이는 그림책</title><style>
+*{box-sizing:border-box}body{margin:0;background:#080c13;color:#e7e9f0;font-family:'Malgun Gothic',sans-serif}.shell{transform-origin:center center;will-change:transform;max-width:1500px;margin:2vh auto;padding:12px;background:#0c1119;border:1px solid #3a4351}.shell.folding{animation:wholeFold 1.4s ease-in-out both;pointer-events:none}@keyframes wholeFold{0%{transform:perspective(1200px) rotateX(0deg) scaleY(1);filter:brightness(1)}46.43%{transform:perspective(1200px) rotateX(0deg) scaleY(0);filter:brightness(.4)}53.57%{transform:perspective(1200px) rotateX(0deg) scaleY(0);filter:brightness(.4)}100%{transform:perspective(1200px) rotateX(0deg) scaleY(1);filter:brightness(1)}}.top{display:flex;justify-content:space-between;color:#b6becd;font-size:12px;letter-spacing:2px;padding:5px 4px 12px}.top span:last-child{color:#f26369}.stage{position:relative;aspect-ratio:16/9;overflow:hidden;background:#0b1017;border:2px solid #515b69}.art{position:absolute;inset:-5%;background:url('paul_road.png') center/cover;animation:camera 28s ease-in-out infinite alternate}.stage.room .art{background-image:url("paul_room.png");filter:brightness(.76) contrast(1.08) saturate(.85);animation:cameraRoom 32s ease-in-out infinite alternate}.stage.room .sun{background:radial-gradient(ellipse at 83% 19%,#ffe2a122,transparent 55%);mix-blend-mode:screen;animation:roomGlow 9s ease-in-out infinite alternate}.stage.room .shadow{background:linear-gradient(100deg,#05070b4d,transparent 60%,#0b0a0633);animation:shadow 15s ease-in-out infinite alternate}@keyframes cameraRoom{from{transform:scale(1.06) translate(-.4%,0)}to{transform:scale(1.13) translate(.5%,-.5%)}}@keyframes roomGlow{from{opacity:.35}to{opacity:.8}}.stage.ananias .art{background-image:url("ananias_call.png");filter:brightness(.82) contrast(1.08);animation:cameraAnanias 28s ease-in-out infinite alternate}.stage.ananias .sun{background:radial-gradient(ellipse at 20% 6%,#fff6c04d,transparent 62%);mix-blend-mode:screen;animation:roomGlow 8s ease-in-out infinite alternate}.stage.ananias .shadow{background:linear-gradient(100deg,transparent 40%,#08090c33)}@keyframes cameraAnanias{from{transform:scale(1.04) translate(-.4%,0)}to{transform:scale(1.10) translate(.4%,-.4%)}}.stage.walk .art{background-image:url("ananias_walk.png");filter:brightness(.89) contrast(1.04) saturate(.92);animation:cameraWalk 30s ease-in-out infinite alternate}.stage.walk .sun{background:radial-gradient(ellipse at 76% 27%,#fff0bf30,transparent 60%);mix-blend-mode:screen;animation:walkGlow 9s ease-in-out infinite alternate}.stage.walk .shadow{background:linear-gradient(105deg,#100b082b,transparent 56%,#0a0c1230);animation:shadow 18s ease-in-out infinite alternate}@keyframes cameraWalk{from{transform:scale(1.04) translate(-.5%,0)}to{transform:scale(1.12) translate(.7%,-.4%)}}@keyframes walkGlow{from{opacity:.42}to{opacity:.85}}.stage.healing .art{background-image:url("ananias_healing.png");filter:brightness(.87) contrast(1.04) saturate(.92);animation:cameraHealing 34s ease-in-out infinite alternate}.stage.healing .sun{background:radial-gradient(ellipse at 79% 12%,#fff4c238,transparent 62%);mix-blend-mode:screen;animation:healingGlow 11s ease-in-out infinite alternate}.stage.healing .shadow{background:linear-gradient(110deg,#0c090b35,transparent 58%,#0c090b19);animation:shadow 19s ease-in-out infinite alternate}@keyframes cameraHealing{from{transform:scale(1.035) translate(-.2%,0)}to{transform:scale(1.105) translate(.4%,-.3%)}}@keyframes healingGlow{from{opacity:.36}to{opacity:.82}}.scripture{position:absolute;z-index:9;left:4%;bottom:6%;width:min(66%,790px);padding:18px 22px 16px;border-left:3px solid #e8bf79;background:linear-gradient(90deg,rgba(9,12,18,.89),rgba(9,12,18,.67));box-shadow:0 12px 35px #0008;opacity:0;transform:translateY(12px);transition:opacity 1.1s ease,transform 1.1s ease;pointer-events:none}.stage.ananias .scripture{opacity:1;transform:translateY(0)}.scripture .ref{font-size:clamp(11px,1.25vw,17px);letter-spacing:1.5px;color:#f3c986;margin-bottom:8px}.scripture .verse{font-size:clamp(14px,1.65vw,24px);line-height:1.65;color:#fff8ed;text-shadow:0 1px 4px #000}.scripture .translation{font-size:clamp(9px,.85vw,12px);color:#c8bba6;margin-top:8px}@media(max-width:650px){.scripture{left:3%;bottom:3%;width:94%;padding:10px 12px}.scripture .verse{font-size:13px;line-height:1.5}}.stage.light .art{background-image:url('paul_light.png');filter:brightness(.88) contrast(1.14) saturate(.9);animation:cameraLight 22s ease-in-out infinite alternate}.sun{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 78% 20%,#fff0a944,transparent 48%);animation:glow 6s ease-in-out infinite alternate}.stage.light .sun{background:radial-gradient(ellipse at 89% 8%,#fffef8b0 0%,#fff4ba66 13%,#e8b65d22 40%,transparent 70%);mix-blend-mode:screen;animation:flash 4.8s ease-in-out infinite alternate}.stage.light .shadow{background:linear-gradient(105deg,#03061180,transparent 55%,#05081633)}.stage .darkReveal{position:absolute;inset:0;background:#040711;opacity:0;pointer-events:none;z-index:4}.stage.light.revealing .darkReveal{animation:darkToLight 3.2s ease-out both}.stage .lightBurst{position:absolute;inset:0;pointer-events:none;z-index:5;opacity:0;background:radial-gradient(ellipse at 86% 7%,#fff 0%,#fffbe7 13%,#ffdf9c55 43%,transparent 73%);mix-blend-mode:screen}.stage.light.revealing .lightBurst{animation:burst 3.2s ease-out both}.stage.light.revealing .art{animation:impact 1.4s ease-out both, cameraLight 22s 1.4s ease-in-out infinite alternate}@keyframes darkToLight{0%{opacity:.97}23%{opacity:.97}42%{opacity:.18}100%{opacity:0}}@keyframes burst{0%,22%{opacity:0}35%{opacity:.95}52%{opacity:.35}100%{opacity:0}}@keyframes impact{0%{transform:scale(1.09) translate(0,0)}34%{transform:scale(1.11) translate(-.3%,.2%)}38%{transform:scale(1.12) translate(.3%,-.2%)}43%{transform:scale(1.11) translate(0,0)}100%{transform:scale(1.08) translate(-.4%,0)}}@keyframes cameraLight{from{transform:scale(1.07) translate(-.7%,0)}to{transform:scale(1.13) translate(.8%,-.7%)}}.shadow{position:absolute;inset:0;background:linear-gradient(115deg,#090d2040,transparent 45%,#06091130);pointer-events:none;animation:shadow 11s ease-in-out infinite alternate}.stage canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}.fold{position:absolute;inset:0;z-index:20;pointer-events:none;display:flex;flex-direction:column;visibility:hidden;perspective:900px}.fold.active{visibility:visible}.panel{width:100%;height:50%;background:linear-gradient(110deg,#0c1119 10%,#25303a 70%,#080b10);border:1px solid #b84a51;box-shadow:inset 0 0 50px #000a}.top-panel{transform-origin:center top;transform:scaleY(0)}.bottom-panel{transform-origin:center bottom;transform:scaleY(0)}.fold.active .top-panel{animation:foldTop 1.7s ease-in-out both}.fold.active .bottom-panel{animation:foldBottom 1.7s ease-in-out both}.fold.active .panel{box-shadow:inset 0 0 80px #000c,0 0 20px #0009}.controls{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:12px}button{cursor:pointer;border:1px solid #697387;background:#1c2633;color:#f4f5f7;padding:10px 15px;border-radius:5px;font-size:14px}button:hover{background:#313d4c}button.primary{border-color:#e65c62;color:#ffb3b6}button:disabled{opacity:.4;cursor:default}label{font-size:13px;color:#c0c8d2}input{vertical-align:middle}.hint{color:#8793a6;font-size:12px;margin-top:12px}.sceneLabel{color:#e9a9aa;font-size:12px;letter-spacing:1px;margin-left:auto}@keyframes camera{from{transform:scale(1.02) translate(-.7%,0)}to{transform:scale(1.11) translate(1.2%,-.6%)}}@keyframes glow{from{opacity:.4}to{opacity:.85}}@keyframes flash{from{opacity:.65}to{opacity:1}}@keyframes shadow{from{transform:translateX(-2%)}to{transform:translateX(2%)}}@keyframes foldTop{0%{transform:scaleY(0)}45%,57%{transform:scaleY(1)}100%{transform:scaleY(0)}}@keyframes foldBottom{0%{transform:scaleY(0)}45%,57%{transform:scaleY(1)}100%{transform:scaleY(0)}}@media(max-width:650px){.top{font-size:9px}.controls{gap:7px}button{padding:8px 10px;font-size:12px}}
+
+.stage.awake .art{background-image:url('paul_awake.png');animation:cameraHealing 28s ease-in-out infinite alternate}.stage.future .art{background-image:url('future.png');animation:camera 24s ease-in-out infinite alternate}.stage.today .art{background-image:url('today.png');animation:camera 32s ease-in-out infinite alternate}.stage.montage .art{background-image:url('preach.png');animation:camera 18s ease-in-out infinite alternate}.stage.montage.travel .art{background-image:url('travel.png')}.stage.montage.prison .art{background-image:url('prison.png')}.stage.montage.letters .art{background-image:url('letters.png')}
+.stage.awake .sun,.stage.future .sun,.stage.montage .sun{background:radial-gradient(ellipse at 79% 15%,#fff3b94a,transparent 65%);animation:glow 8s ease-in-out infinite alternate}
+.stage.today .sun{background:linear-gradient(90deg,transparent,#ffdca020);animation:glow 9s ease-in-out infinite alternate}
+.ending{position:absolute;z-index:10;inset:0;display:none;align-items:center;justify-content:center;text-align:center;padding:6%;background:linear-gradient(90deg,#050910dd,#10131ac0);color:#fff4df;font-size:clamp(18px,3vw,43px);line-height:1.65;text-shadow:0 2px 12px #000}.stage.today .ending{display:flex}.ending strong{color:#ffe2a1}.montageCaption{position:absolute;bottom:6%;left:5%;z-index:10;color:white;font-size:clamp(15px,2.2vw,32px);background:#090c13b9;padding:10px 20px;border-left:3px solid #e9c58c;display:none}.stage.montage .montageCaption{display:none}
+
+/* Scene 07: image-only montage, gentle filmic motion */
+.stage.awake .art{animation:scene7Awake 24s ease-in-out infinite alternate;filter:brightness(.92) contrast(1.07)}
+.stage.future .art{animation:scene7Journey 25s ease-in-out infinite alternate;filter:contrast(1.08) saturate(1.05)}
+.stage.montage .art{animation:scene7Montage 23s ease-in-out infinite alternate;filter:contrast(1.08) saturate(.96)}
+.stage.awake .sun{background:radial-gradient(ellipse at 78% 10%,#fff7d16e 0%,#ffe3a829 35%,transparent 72%);mix-blend-mode:screen;animation:scene7Sun 7s ease-in-out infinite alternate}
+.stage.future .sun,.stage.montage .sun{background:linear-gradient(112deg,transparent 15%,#ffe5b31b 58%,transparent 94%);mix-blend-mode:screen;animation:scene7Sun 9s ease-in-out infinite alternate}
+.stage.awake .shadow,.stage.future .shadow,.stage.montage .shadow{background:radial-gradient(ellipse at center,transparent 35%,#07080f55 100%);animation:shadow 19s ease-in-out infinite alternate}
+@keyframes scene7Awake{from{transform:scale(1.04) translate(-.3%,0)}to{transform:scale(1.11) translate(.5%,-.5%)}}
+@keyframes scene7Journey{from{transform:scale(1.04) translate(-.4%,0)}to{transform:scale(1.12) translate(.6%,-.4%)}}
+@keyframes scene7Montage{from{transform:scale(1.02) translate(-.5%,0)}to{transform:scale(1.10) translate(.6%,-.5%)}}
+@keyframes scene7Sun{from{opacity:.4}to{opacity:.9}}
+
+/* Scene 07: original wide framing, subtle moving light and dust */
+.stage.awake .art,.stage.future .art,.stage.montage .art{
+  inset:0;background-position:center;background-size:contain;background-repeat:no-repeat;
+  background-color:#0b1017;filter:none;
+  animation:scene7Breath 32s ease-in-out infinite alternate!important;
+}
+@keyframes scene7Breath{from{transform:scale(1)}to{transform:scale(1.006)}}
+.stage.awake .sun{background:radial-gradient(ellipse at 82% 13%,rgba(255,249,212,.43),rgba(255,211,132,.11) 34%,transparent 67%);mix-blend-mode:screen;animation:scene7Light 7s ease-in-out infinite alternate}
+.stage.future .sun{background:radial-gradient(ellipse at 80% 37%,rgba(255,238,182,.27),transparent 65%);mix-blend-mode:screen;animation:scene7Light 11s ease-in-out infinite alternate}
+.stage.montage .sun{background:linear-gradient(110deg,transparent 15%,rgba(255,223,166,.17) 53%,transparent 90%);mix-blend-mode:screen;animation:scene7Light 9s ease-in-out infinite alternate}
+.stage.montage.prison .sun{background:radial-gradient(ellipse at 73% 16%,rgba(171,201,255,.20),transparent 63%)}
+.stage.montage.letters .sun{background:radial-gradient(ellipse at 80% 62%,rgba(255,194,103,.23),transparent 62%)}
+.stage.awake .shadow,.stage.future .shadow,.stage.montage .shadow{animation:scene7Shade 17s ease-in-out infinite alternate}
+@keyframes scene7Light{from{opacity:.25;transform:translateX(-1%)}to{opacity:.8;transform:translateX(1%)}}
+@keyframes scene7Shade{from{opacity:.5;transform:translateX(-1%)}to{opacity:.85;transform:translateX(1%)}}
+/* Scene-specific cinematic light: independent slow glows, preserving full images */
+.stage.future .sun{background:radial-gradient(ellipse at 76% 29%,rgba(255,230,151,.34),transparent 63%);animation:scene7Light 9s ease-in-out infinite alternate}
+.stage.montage:not(.travel):not(.prison):not(.letters) .sun{background:radial-gradient(ellipse at 77% 18%,rgba(255,218,148,.24),transparent 65%);animation:scene7Light 8s ease-in-out infinite alternate}
+.stage.montage.travel .sun{background:radial-gradient(ellipse at 12% 17%,rgba(255,235,175,.28),transparent 65%);animation:scene7Light 10s ease-in-out infinite alternate}
+.stage.montage.prison .sun{background:radial-gradient(ellipse at 76% 15%,rgba(162,201,255,.25),transparent 66%);animation:scene7Light 11s ease-in-out infinite alternate}
+.stage.montage.letters .sun{background:radial-gradient(ellipse at 78% 62%,rgba(255,179,84,.26),transparent 62%);animation:scene7Light 6s ease-in-out infinite alternate}
+
+/* 관객 화면은 조작 도구가 전혀 없는 순수 감상 화면 */
+body.viewer{overflow:hidden;background:#000}
+body.viewer .shell{margin:0;padding:0;max-width:none;width:100vw;height:100vh;border:0;display:flex;flex-direction:column;background:#000}
+body.viewer .top,body.viewer .controls,body.viewer .hint{display:none!important}
+body.viewer .stage{flex:1;min-height:0;width:100%;height:100%;aspect-ratio:auto;border:0}
+body.viewer .art{inset:0}
+body.viewer .stage .art{background-size:contain;background-repeat:no-repeat;background-position:center}
+body.viewer .stage:not(.awake):not(.future):not(.montage):not(.today) .art{background-size:cover}
+
+/* Audience: preserve original MY CASE FILE border, header and stage frame; hide only controls. */
+body.viewer{min-height:100vh;overflow:hidden;background:#080c13;display:flex;align-items:center;justify-content:center}
+body.viewer .shell{display:block;flex:none;width:min(100vw, calc((100vh - 66px) * 16 / 9 + 28px));max-width:1500px;height:auto;margin:0 auto;padding:12px;background:#0c1119;border:1px solid #3a4351}
+body.viewer .top{display:flex!important;justify-content:space-between;padding:5px 4px 12px}
+body.viewer .controls,body.viewer .hint{display:none!important}
+body.viewer .stage{display:block;flex:none;width:100%;height:auto;min-height:0;aspect-ratio:16/9;border:2px solid #515b69}
+body.viewer .art{inset:-5%}
+body.viewer .stage .art{background-size:contain;background-repeat:no-repeat;background-position:center}
+body.viewer .stage:not(.awake):not(.future):not(.montage):not(.today) .art{background-size:cover}
+@media(max-width:650px){body.viewer .shell{padding:7px;width:min(100vw, calc((100vh - 44px) * 16 / 9 + 16px))}}
+</style></head><body><main class="shell"><header class="top"><span>MY CASE FILE / BIBLE STORIES</span><span>CASE 001 ●</span></header><section class="stage" id="stage"><div class="art"></div><div class="sun"></div><div class="shadow"></div><div class="darkReveal"></div><div class="lightBurst"></div><canvas id="particles"></canvas><div class="montageCaption" id="montageCaption"></div><div class="ending"><div>예수님은 사울을 찾아오셨습니다.<br>그리고 그의 삶은 새롭게 되었습니다.<br><br><strong>그렇다면 오늘,<br>복음은 나의 삶을 어떻게 바꾸고 있을까요?</strong></div></div><div class="scripture" aria-live="polite"><div class="ref">사도행전 9장 11절</div><div class="verse">주께서 이르시되 일어나 직가라 하는 거리로 가서 유다의 집에서 다소 사람 사울이라 하는 사람을 찾으라 그가 기도하는 중이니라</div><div class="translation">개역개정</div></div></section><div class="controls"><button id="prev">◀ 이전 장면</button><button class="primary" id="next">다음 장면 ▶</button><button id="sound">♪ BGM 켜기</button><label>음량 <input type="range" id="vol" min="0" max="100" value="24"></label><button id="full">전체 화면</button><button class="primary" id="audienceOpen">관객 화면 열기 ↗</button><span class="sceneLabel" id="sceneLabel">01 / 다메섹으로 가는 길</span></div><p class="hint">그림책 · 프로그램 전체가 위아래로 접히는 전환 + 부드러운 책장 넘김 효과음 · 좌우 방향키로 장면 전환 · 브라우저에서 BGM 버튼을 눌러 음악 시작 · 04번 장면은 아나니아에게 주신 말씀(행 9:11)을 화면에 표시합니다. 05번 장면은 아나니아가 사울을 찾아가는 길입니다. 06번 장면은 아나니아가 사울에게 안수하는 모습입니다. 07번 장면 이후는 바울의 미래를 영화적으로 미리 보여주는 연출입니다. 08번 장면은 오늘 우리의 삶을 돌아보는 질문입니다.</p></main><audio id="awakeAudio" src="awake.wav" loop preload="auto"></audio><audio id="futureAudio" src="future.wav" loop preload="auto"></audio><audio id="todayAudio" src="today.wav" loop preload="auto"></audio><audio id="pageTurn" src="page_turn.wav" preload="auto"></audio><audio id="road" src="road.wav" loop preload="auto"></audio><audio id="light" src="light.wav" loop preload="auto"></audio><audio id="roomAudio" src="room.wav" loop preload="auto"></audio><audio id="ananiasAudio" src="ananias.wav" loop preload="auto"></audio><audio id="walkAudio" src="walk.wav" loop preload="auto"></audio><audio id="healingAudio" src="healing.wav" loop preload="auto"></audio><script>
+const params = new URLSearchParams(location.search);
+const presenterMode = params.has('presenter');
+const viewerMode = !presenterMode;
+let liveSocket = null;
+let liveConnected = false;
+let presenterKey = '';
+function connectLive(){
+  if(!location.host || !/^https?:$/.test(location.protocol)) return;
+  if(presenterMode){
+    presenterKey = sessionStorage.getItem('mycase_presenter_key') || prompt('진행자 비밀번호를 입력하세요') || '';
+    if(!presenterKey) return;
+    sessionStorage.setItem('mycase_presenter_key', presenterKey);
+  }
+  const proto=location.protocol==='https:'?'wss:':'ws:';
+  liveSocket = new WebSocket(proto+'//'+location.host+'/live');
+  liveSocket.onopen=()=>{
+    liveSocket.send(JSON.stringify({type:'join',role:presenterMode?'presenter':'audience',key:presenterMode?presenterKey:undefined}));
+  };
+  liveSocket.onmessage=e=>{
+    let m;try{m=JSON.parse(e.data)}catch{return}
+    if(m.type==='error'){
+      if(presenterMode){sessionStorage.removeItem('mycase_presenter_key');alert(m.message||'인증 실패');}
+      return;
+    }
+    if(m.type==='joined'){liveConnected=true; if(presenterMode)liveSocket.send(JSON.stringify({type:'scene',scene:scene,immediate:true}));}
+    if(m.type==='state' && viewerMode){
+      const target=Number(m.scene);
+      if(!Number.isInteger(target)||target<0||target>12)return;
+      if(m.immediate || !liveConnected || busy){
+        scene=target;busy=false;shell.classList.remove('folding');update();
+      } else switchTo(target);
+    }
+  };
+  liveSocket.onclose=()=>{liveConnected=false;setTimeout(connectLive,3000)};
+}
+
+if(viewerMode) document.body.classList.add('viewer');
+let audienceWindow = null;
+function sendAudience(data){
+  if(presenterMode && liveSocket && liveSocket.readyState===1 && data.type==='sync'){
+    liveSocket.send(JSON.stringify({type:'scene',scene:data.scene,immediate:!!data.immediate}));
+  }
+  if(audienceWindow && !audienceWindow.closed) audienceWindow.postMessage({myCaseFile:true,...data},'*')}
+window.addEventListener('message',event=>{
+  if(!event.data || event.data.myCaseFile!==true) return;
+  if(viewerMode){
+    if(event.source!==window.opener) return;
+    if(event.data.type==='sync'){
+      const target=Number(event.data.scene);
+      if(!Number.isInteger(target)||target<0||target>12)return;
+      if(event.data.immediate){scene=target;busy=false;shell.classList.remove('folding');update();}
+      else switchTo(target);
+    }
+  }else if(event.data.type==='ready' && event.source===audienceWindow){sendAudience({type:'sync',scene,immediate:true})}
+});
+const stage=document.getElementById('stage'),shell=document.querySelector('.shell'),road=document.getElementById('road'),light=document.getElementById('light'),roomAudio=document.getElementById('roomAudio'),ananiasAudio=document.getElementById('ananiasAudio'),walkAudio=document.getElementById('walkAudio'),healingAudio=document.getElementById('healingAudio'),awakeAudio=document.getElementById('awakeAudio'),futureAudio=document.getElementById('futureAudio'),todayAudio=document.getElementById('todayAudio'),sound=document.getElementById('sound'),vol=document.getElementById('vol'),label=document.getElementById('sceneLabel');let scene=0,busy=false,playing=false;const pageTurn=document.getElementById('pageTurn');const audios=[road,light,roomAudio,ananiasAudio,walkAudio,healingAudio,awakeAudio,futureAudio,futureAudio,futureAudio,futureAudio,futureAudio,todayAudio];function volumes(){[...new Set(audios)].forEach(a=>a.volume=(playing&&audios[scene]===a?Number(vol.value)/100:0))}function update(){stage.classList.toggle('light',scene===1);stage.classList.toggle('room',scene===2);stage.classList.toggle('ananias',scene===3);stage.classList.toggle('walk',scene===4);stage.classList.toggle('healing',scene===5);stage.classList.toggle('awake',scene===6);stage.classList.toggle('future',scene===7);stage.classList.toggle('montage',scene>=8&&scene<=11);stage.classList.toggle('travel',scene===9);stage.classList.toggle('prison',scene===10);stage.classList.toggle('letters',scene===11);stage.classList.toggle('today',scene===12);document.getElementById('montageCaption').textContent='';label.textContent=['01 / 다메섹으로 가는 길','02 / 하늘에서 비친 빛','03 / 홀로 남겨진 사울','04 / 아나니아를 부르시는 하나님','05 / 믿음으로 내딛는 발걸음','06 / 형제 사울아 — 아나니아의 안수','07-A / 다시 눈을 뜨는 사울','07-B / 새로운 여정의 시작','07-C / 복음을 전하는 바울','07-D / 선교 여행','07-E / 고난 속에서도 찬양','07-F / 교회에 편지를 쓰는 바울','08 / 복음은 오늘 우리에게'][scene];document.getElementById('prev').disabled=scene===0;document.getElementById('next').disabled=scene===12}function switchTo(target){if(busy||target===scene||target<0||target>12)return;busy=true;pageTurn.pause();pageTurn.currentTime=0;pageTurn.volume=viewerMode?0:0.09;if(!viewerMode)pageTurn.play().catch(()=>{});shell.classList.remove('folding');void shell.offsetWidth;shell.classList.add('folding');let old=audios[scene],newAudio=audios[target],start=performance.now(),v=Number(vol.value)/100;const fade=()=>{let x=Math.min(1,(performance.now()-start)/1400);if(playing){if(old===newAudio){old.volume=v}else{old.volume=v*Math.max(0,1-x*2);newAudio.volume=v*Math.max(0,(x-.5)*2)}}if(x<1)requestAnimationFrame(fade)};if(!viewerMode)sendAudience({type:'sync',scene:target,immediate:false});if(playing){newAudio.volume=0;if(newAudio!==old){newAudio.currentTime=0;newAudio.play().catch(()=>{})};requestAnimationFrame(fade)}setTimeout(()=>{scene=target;update();stage.classList.remove('revealing');void stage.offsetWidth;if(scene===1)stage.classList.add('revealing')},700);setTimeout(()=>{shell.classList.remove('folding');if(old!==newAudio){old.pause();old.currentTime=0}volumes();busy=false},1450)}document.getElementById('audienceOpen').onclick=()=>{if(audienceWindow&&!audienceWindow.closed){audienceWindow.focus();sendAudience({type:'sync',scene,immediate:true});return;}audienceWindow=window.open(location.pathname,'myCaseFileAudience','width=1280,height=760');if(!audienceWindow)alert('팝업 차단을 해제한 뒤 다시 눌러주세요.');};document.getElementById('next').onclick=()=>switchTo(scene+1);document.getElementById('prev').onclick=()=>switchTo(scene-1);sound.onclick=async()=>{playing=!playing;if(playing){try{await audios[scene].play()}catch(e){playing=false;alert('브라우저에서 음악을 시작하지 못했습니다. 다시 눌러주세요.')}}else audios.forEach(a=>a.pause());volumes();sound.textContent=playing?'♫ BGM 끄기':'♪ BGM 켜기'};vol.oninput=volumes;document.getElementById('full').onclick=()=>{if(!document.fullscreenElement)document.querySelector('.shell').requestFullscreen?.();else document.exitFullscreen?.()};document.addEventListener('keydown',e=>{if(viewerMode)return;if(e.key==='ArrowRight')switchTo(scene+1);if(e.key==='ArrowLeft')switchTo(scene-1)});update();connectLive();if(viewerMode && window.opener)window.opener.postMessage({myCaseFile:true,type:'ready'},'*');
+// Scene 01: 기존 나뭇잎·먼지 애니메이션 그대로 유지합니다.
+// Scene 02: 나뭇잎 없이 먼지와 빛 입자를 세밀하게 움직입니다.
+const canvas=document.getElementById('particles'),ctx=canvas.getContext('2d');
+let W=0,H=0,last=0;
+function resize(){W=canvas.width=canvas.clientWidth*devicePixelRatio;H=canvas.height=canvas.clientHeight*devicePixelRatio}
+window.addEventListener('resize',resize);resize();
+const p=Array.from({length:125},(_,i)=>({x:Math.random(),y:Math.random(),r:1+Math.random()*2.7,v:.00012+Math.random()*.00027,phase:Math.random()*7,leaf:i<20}));
+const rand=(a,b)=>a+Math.random()*(b-a);
+const dust=Array.from({length:145},()=>({x:Math.random(),y:Math.random(),size:rand(.45,2.15),speed:rand(.003,.014),rise:rand(-.006,.003),phase:rand(0,Math.PI*2),alpha:rand(.13,.48),depth:rand(.55,1.5)}));
+const motes=Array.from({length:32},()=>({x:rand(.46,1),y:rand(.02,.85),size:rand(.4,1.55),phase:rand(0,Math.PI*2)}));
+function draw(t){const dt=Math.min((t-last)/1000||0,.05);last=t;ctx.clearRect(0,0,W,H);
+ if(scene===0){
+  // 기존 Scene 01 코드의 이동 속도, 나뭇잎, 색, 입자 수 모두 동일.
+  p.forEach(a=>{a.x+=a.v*(a.leaf?2.2:1);a.y+=Math.sin(t*.0007+a.phase)*.00012;if(a.x>1.06){a.x=-.06;a.y=Math.random()}let x=a.x*W,y=a.y*H;ctx.save();ctx.translate(x,y);if(a.leaf){ctx.rotate(t*.0007+a.phase);ctx.fillStyle='rgba(174,119,56,.75)';ctx.beginPath();ctx.ellipse(0,0,a.r*2.6*devicePixelRatio,a.r*devicePixelRatio,.3,0,Math.PI*2);ctx.fill()}else{ctx.fillStyle='rgba(232,202,156,.6)';ctx.beginPath();ctx.arc(0,0,a.r*devicePixelRatio,0,Math.PI*2);ctx.fill()}ctx.restore()});
+ }else if(scene===1){
+  const scale=Math.min(W/1200,2);
+  for(const a of dust){a.x+=a.speed*a.depth*dt*1.35;a.y+=a.rise*dt+Math.sin(t*.00065+a.phase)*dt*.0019;if(a.x>1.025){a.x=-.025;a.y=Math.random()}if(a.y<-.025)a.y=1.025;if(a.y>1.025)a.y=-.025;const x=(a.x+Math.sin(t*.00035+a.phase)*.0025)*W,y=a.y*H;const flicker=.82+.18*Math.sin(t*.0012+a.phase);ctx.beginPath();ctx.fillStyle=`rgba(255,221,164,${a.alpha*.85*flicker})`;ctx.arc(x,y,a.size*scale*a.depth,0,Math.PI*2);ctx.fill()}
+  ctx.save();ctx.globalCompositeOperation='screen';for(const a of motes){const x=(a.x+Math.sin(t*.00025+a.phase)*.012)*W,y=(a.y+Math.cos(t*.00031+a.phase)*.008)*H;const shimmer=.16+.23*(.5+.5*Math.sin(t*.0015+a.phase));const r=a.size*scale;const g=ctx.createRadialGradient(x,y,0,x,y,r*5);g.addColorStop(0,`rgba(255,247,218,${shimmer})`);g.addColorStop(1,'rgba(255,224,160,0)');ctx.fillStyle=g;ctx.beginPath();ctx.arc(x,y,r*5,0,Math.PI*2);ctx.fill()}ctx.restore();
+ }else if(scene===2){
+  // Scene 03: 빛줄기 안에 머무는 미세한 실내 먼지. Scene 01·02 입자는 변경하지 않습니다.
+  const scale=Math.min(W/1200,2);
+  for(const a of dust){a.x+=a.speed*a.depth*dt*.18;a.y+=a.rise*dt*.3+Math.sin(t*.0003+a.phase)*dt*.0006;if(a.x>1.02)a.x=-.02;if(a.y<-.02)a.y=1.02;if(a.y>1.02)a.y=-.02;
+    const x=a.x*W,y=a.y*H;const lit=Math.max(.16,1-Math.abs(a.x-.72)*1.8)*Math.max(.22,1-Math.abs(a.y-.35));const shimmer=.75+.25*Math.sin(t*.0008+a.phase);
+    ctx.beginPath();ctx.fillStyle=`rgba(255,225,177,${a.alpha*lit*.5*shimmer})`;ctx.arc(x,y,Math.max(.5,a.size*scale*.55),0,Math.PI*2);ctx.fill();
+  }
+ }else if(scene===3){ // Scene 04: soft, slow floating motes in the light
+   const scale=Math.min(W/1200,2);
+   for(const a of dust){a.x+=a.speed*a.depth*dt*.12;a.y+=a.rise*dt*.2+Math.sin(t*.00025+a.phase)*dt*.00045;if(a.x>1.02)a.x=-.02;if(a.y<-.02)a.y=1.02;if(a.y>1.02)a.y=-.02;
+    const x=a.x*W,y=a.y*H;const lit=Math.max(.12,1-Math.abs(a.x-.25)*1.45);const shimmer=.78+.22*Math.sin(t*.0007+a.phase);ctx.beginPath();ctx.fillStyle=`rgba(255,229,177,${a.alpha*lit*.45*shimmer})`;ctx.arc(x,y,Math.max(.5,a.size*scale*.55),0,Math.PI*2);ctx.fill();}
+ }else if(scene===4){ // Scene 05: soft, sunlit street dust, no leaves
+   const scale=Math.min(W/1200,2);
+   for(const a of dust){a.x+=a.speed*a.depth*dt*.43;a.y+=a.rise*dt*.35+Math.sin(t*.0004+a.phase)*dt*.0008;if(a.x>1.02)a.x=-.02;if(a.y<-.02)a.y=1.02;if(a.y>1.02)a.y=-.02;
+    const x=a.x*W,y=a.y*H;const lit=Math.max(.15,1-Math.abs(a.x-.7)*1.1);const shimmer=.72+.28*Math.sin(t*.00065+a.phase);ctx.beginPath();ctx.fillStyle=`rgba(255,220,166,${a.alpha*lit*.55*shimmer})`;ctx.arc(x,y,Math.max(.45,a.size*scale*.65),0,Math.PI*2);ctx.fill();}
+ }else if(scene>=6 && scene<=11){ // Scene 07: layered drifting dust, subtly changing light
+   const scale=Math.min(W/1200,2);
+   const indoor=(scene===6||scene===11), cool=scene===10;
+   const direction=scene===9?-1:1;
+   for(const a of dust){
+     a.x+=direction*a.speed*a.depth*dt*(indoor?.16:.48);
+     a.y+=a.rise*dt*(indoor?.20:.55)+Math.sin(t*.00048+a.phase)*dt*.001;
+     if(a.x>1.03)a.x=-.03;if(a.x<-.03)a.x=1.03;
+     if(a.y<-.03)a.y=1.03;if(a.y>1.03)a.y=-.03;
+     const x=(a.x+Math.sin(t*.00028+a.phase)*.002)*W,y=a.y*H;
+     const lit=scene===6?Math.max(.08,1-Math.abs(a.x-.80)*1.65):
+       scene===10?Math.max(.1,1-Math.abs(a.x-.70)*1.4):.35+.55*(1-a.y);
+     const flicker=.73+.27*Math.sin(t*.0009+a.phase);
+     ctx.beginPath();ctx.fillStyle=cool?`rgba(196,217,255,${a.alpha*lit*.53*flicker})`:`rgba(255,224,171,${a.alpha*lit*.62*flicker})`;
+     ctx.arc(x,y,Math.max(.45,a.size*scale*(indoor?.56:.74)),0,Math.PI*2);ctx.fill();
+   }
+   ctx.save();ctx.globalCompositeOperation='screen';
+   for(const a of motes){
+     const x=(a.x+Math.sin(t*.0003+a.phase)*.012)*W,y=(a.y+Math.cos(t*.00022+a.phase)*.006)*H;
+     const alpha=(scene===6?.18:.09)*(.55+.45*Math.sin(t*.0011+a.phase));
+     const r=a.size*scale*4;
+     const g=ctx.createRadialGradient(x,y,0,x,y,r);g.addColorStop(0,cool?`rgba(203,224,255,${alpha})`:`rgba(255,242,197,${alpha})`);g.addColorStop(1,'rgba(255,230,180,0)');
+     ctx.fillStyle=g;ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fill();
+   }ctx.restore();
+ }else{ // Scene 06: delicate indoor dust in the shaft of warm light, no leaves
+   const scale=Math.min(W/1200,2);
+   for(const a of dust){a.x+=a.speed*a.depth*dt*.13;a.y+=a.rise*dt*.15+Math.sin(t*.0003+a.phase)*dt*.00055;
+    if(a.x>1.02)a.x=-.02;if(a.y<-.02)a.y=1.02;if(a.y>1.02)a.y=-.02;
+    const x=a.x*W,y=a.y*H;const lit=Math.max(.07,1-Math.abs(a.x-.72)*1.4);const shimmer=.7+.3*Math.sin(t*.00042+a.phase);
+    ctx.beginPath();ctx.fillStyle=`rgba(255,225,173,${a.alpha*lit*.48*shimmer})`;ctx.arc(x,y,Math.max(.35,a.size*scale*.55),0,Math.PI*2);ctx.fill();}
+ }requestAnimationFrame(draw)}requestAnimationFrame(draw);
+</script></body></html>
